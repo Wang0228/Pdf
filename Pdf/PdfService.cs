@@ -37,9 +37,10 @@ namespace Pdf
                     {
                         trackedFiled.Add(file);
                         FileInfo lastFile=new FileInfo(file);
+                        Console.WriteLine($"處理{lastFile.Name}");
                         var client = new HttpClient();
                         var request = new HttpRequestMessage(HttpMethod.Post, "https://localhost:7168/api/pdf");
-                        var content = new StringContent("{\"AifileName\":\""+lastFile.Name+"\"}", null, "application/json");
+                        var content = new StringContent("{\"AifileName\":\"" + lastFile.Name + "\"}", null, "application/json");
                         request.Content = content;
                         var response = await client.SendAsync(request);
                         response.EnsureSuccessStatusCode();

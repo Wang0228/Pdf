@@ -10,7 +10,7 @@ namespace Pdf
     {
         static void Main(string[] args)
         {
-            var a = new PdfService(@".\folder");
+            var a = new PdfService(@"C:\Users\as258\source\repos\HK_Project\HK_project\Upload");//.\folder
             Console.ReadLine();
         }
     }
